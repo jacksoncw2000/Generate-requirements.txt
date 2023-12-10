@@ -28,7 +28,7 @@ def generate_requirements(project_dir, venv_path):
 if __name__ == "__main__":
     # Check if the project directory is provided
     if len(sys.argv) != 2:
-        print("Usage: python script_name.py <project_directory>")
+        print("Usage: python generate_requirements_file.py <project_directory>")
         sys.exit(1)
 
     project_dir = sys.argv[1]
