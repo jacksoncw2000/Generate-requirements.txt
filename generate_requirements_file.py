@@ -19,7 +19,7 @@ def find_venv(project_dir):
 def generate_requirements(project_dir, venv_path):
     # Activate the virtual environment
     activate_script = os.path.join(venv_path, 'bin', 'activate')
-    command = f'source {activate_script} && pip freeze > {os.path.join(project_dir, "requirements.txt")}'
+    command = f'source "{activate_script}" && pip freeze > "{os.path.join(project_dir, "requirements.txt")}"'
 
     # Run the command in a subshell
     subprocess.run(command, shell=True, executable='/bin/bash')
