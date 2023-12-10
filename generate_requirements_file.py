@@ -1,5 +1,6 @@
 import os
 import subprocess
+import sys
 
 def find_venv(project_dir):
     # Common virtual environment directory names
@@ -25,7 +26,12 @@ def generate_requirements(project_dir, venv_path):
     print(f'requirements.txt generated in {project_dir}')
 
 if __name__ == "__main__":
-    project_dir = input("Enter the path to your project directory: ")
+    # Check if the project directory is provided
+    if len(sys.argv) != 2:
+        print("Usage: python script_name.py <project_directory>")
+        sys.exit(1)
+
+    project_dir = sys.argv[1]
 
     # Find the virtual environment
     venv_path = find_venv(project_dir)
